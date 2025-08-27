@@ -1,0 +1,123 @@
+# ===================================================================
+# General Python
+# ===================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+# Usually dist/ but behave as though it may appear in the root directory
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.pytest_cache/
+reports/
+
+# Environments
+.env
+.venv
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# ===================================================================
+# C++ / CUDA / Build Artifacts
+# ===================================================================
+# Compiled object files
+*.o
+*.obj
+*.lo
+*.la
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Libraries and executables
+*.lib
+*.a
+*.dll
+*.exe
+*.out
+*.app
+
+# Debug files
+*.pdb
+*.dSYM/
+
+# ===================================================================
+# IDEs and Editors
+# ===================================================================
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# PyCharm
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# ===================================================================
+# OS-specific files
+# ===================================================================
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ===================================================================
+# Conda
+# ===================================================================
+# Conda environment files created within the project
+.conda/

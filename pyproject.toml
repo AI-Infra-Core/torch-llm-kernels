@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "torch-llm-kernels"
+version = "0.1.0"
+authors = [
+  { name = "AI-Infra-Core", email = "ai.infra.core@gmail.com" },
+]
+description = "CUDA Kernels for Large Language Models (LLMs), compatible with torch.compile."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.4"
+]
+license = "MIT"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/AI-Infra-Core/torch-llm-kernels"
+"Bug Tracker" = "https://github.com/AI-Infra-Core/torch-llm-kernels/issues"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools]
+packages = ["torch_llm_kernels"]
+package-dir = {"" = "src"}
