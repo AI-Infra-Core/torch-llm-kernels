@@ -40,7 +40,7 @@ def test_swiglu_compile(dtype):
     gate = torch.randn(shape, device=device, dtype=dtype)
     up = torch.randn(shape, device=device, dtype=dtype)
     
-    compiled_swiglu = torch.compile(swiglu, mode="max-autotune")
+    compiled_swiglu = torch.compile(swiglu, fullgraph=True)
     output_compiled = compiled_swiglu(gate, up)
     output_ref = swiglu_pytorch(gate, up)
     

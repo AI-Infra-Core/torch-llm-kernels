@@ -90,7 +90,7 @@ std::tuple<torch::Tensor, torch::Tensor> swiglu_backward_cuda(
 
 TORCH_LIBRARY(torch_llm_kernels, m) {
     m.def("swiglu_forward(Tensor gate, Tensor up) -> Tensor");
-    m.def("swiglu_backward(Tensor grad_output, Tensor gate, Tensor up) -> (Tensor, Tensor)");
+    m.def("swiglu_backward(Tensor grad_output, Tensor gate, Tensor up) -> (Tensor, Tensor)"); // return tuple, same as the c++ returns std::tuple<torch::Tensor, torch::Tensor>, otherwise Tensor[] -> vector<torch::Tensor>
 }
 
 TORCH_LIBRARY_IMPL(torch_llm_kernels, CUDA, m) {
