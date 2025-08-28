@@ -56,6 +56,7 @@ def get_extensions():
 
 
 setup(
+    include_package_data=True,
     ext_modules=get_extensions(),
     cmdclass={"build_ext": BuildExtension},
     options={"bdist_wheel": {"py_limited_api": "cp39"}} if py_limited_api else {},
