@@ -1,5 +1,6 @@
-import os, torch, glob
+import os, glob
 from setuptools import setup
+import torch
 from torch.utils.cpp_extension import CUDAExtension, BuildExtension
 
 library_name = "torch_llm_kernels"
