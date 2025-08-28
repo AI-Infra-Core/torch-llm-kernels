@@ -1,16 +1,13 @@
-import os, glob
+import os, glob, sys
 from setuptools import setup
-import torch
-from torch.utils.cpp_extension import CUDAExtension, BuildExtension
 
 library_name = "torch_llm_kernels"
 
-if torch.__version__ >= "2.6.0":
-    py_limited_api = True
-else:
-    py_limited_api = False
+needs_ext_modules = 'build_ext' in sys.argv
 
 def get_extensions():
+    import torch
+    from torch.utils.cpp_extension import CUDAExtension
     debug_mode = os.getenv("DEBUG", "0") == "1"
     if debug_mode:
         print("Compiling in debug mode")
@@ -49,16 +46,23 @@ def get_extensions():
             include_dirs=include_dirs,
             extra_compile_args=extra_compile_args,
             extra_link_args=extra_link_args,
-            py_limited_api=py_limited_api,
+            py_limited_api=True,
         )
     ]
 
     return ext_modules
 
+if needs_ext_modules:
+    from torch.utils.cpp_extension import BuildExtension
+    ext_modules = get_extensions()
+    cmdclass = {"build_ext": BuildExtension}
+else:
+    ext_modules = []
+    cmdclass = {}
 
 setup(
     include_package_data=True,
-    ext_modules=get_extensions(),
-    cmdclass={"build_ext": BuildExtension},
-    options={"bdist_wheel": {"py_limited_api": "cp39"}} if py_limited_api else {},
+    ext_modules=ext_modules,
+    cmdclass=cmdclass,
+    options={"bdist_wheel": {"py_limited_api": "cp39"}},
 )

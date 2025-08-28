@@ -22,7 +22,7 @@ This library aims to implement a suite of the most critical kernels for accelera
 
 1.  **Installation**
     ```bash
-    pip install --no-build-isolation .
+    pip install .
     ```
 
 2.  **Run Tests**
